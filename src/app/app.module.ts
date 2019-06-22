@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +20,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [TestComponent, UserProfileComponent]
+  exports: [TestComponent, UserProfileComponent, UserListComponent]
 })
 export class AppModule { }
