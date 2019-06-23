@@ -3,7 +3,8 @@
   <div>
     <ul>
       <li *ngFor="let emp of employees">
-        <p>{{emp.firstName}} {{emp.lastName}} {{emp.id}} <button (click)="deleteEmployee(emp.id)">DELETE</button></p>
+        <p>{{emp.firstName}} {{emp.lastName}} {{emp.id}} <button (click)="deleteEmployee(emp.id)">Delete</button>
+        <a [routerLink]="['/employees/',emp.id]">Details</a> </p>
       </li>
     </ul>
   </div>

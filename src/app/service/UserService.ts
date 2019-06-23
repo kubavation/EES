@@ -26,4 +26,8 @@ export class UserService {
         this.db.doc('Employee/' + empId).delete();
     }
 
+    findById(empId: string) {
+        return this.db.doc('Employee/' + empId).valueChanges();
+    }
+
 }

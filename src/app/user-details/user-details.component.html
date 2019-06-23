@@ -1,3 +1,8 @@
-<p>
+<div>
   hello in details
-</p>
+  <div *ngIf='employee !== undefined'>
+    {{employee.firstName}}
+    {{employee.lastName}}
+    {{employee.birth.toDate() | date}}
+  </div>
+</div>
