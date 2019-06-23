@@ -1,26 +1,29 @@
 import { Employee } from './../model/Employee';
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
 
-    users: Employee[];
-
-    constructor() {
-        this.users = [
-            new Employee('jakub','jakubiak',new Date(), new Date(), 'position 1'),
-            new Employee('jakub2','jakubiak2',new Date(), new Date(), 'position 2'),
-            new Employee('jakub3','jakubiak3',new Date(), new Date(), 'position 3')
-        ];
-    }
-
+    constructor(public db: AngularFirestore) {}
 
     findAll() {
-        return this.users;
+        return this.db.collection('Employee').snapshotChanges();
     }
 
-    
+    create(emp: Employee) {
+        return this.db.collection('Employee').add(emp);
+    }
+
+    update(emp: Employee) {
+        delete emp.id;
+        return this.db.doc('Employee/' + emp.id).update(emp);
+    }
+
+    delete(empId: number) {
+        this.db.doc('Employee/' + empId).delete();
+    }
 
 }
