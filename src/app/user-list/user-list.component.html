@@ -1,7 +1,15 @@
-<div>
+<div style="margin-top:10%;margin-left:25%;width:25%">
+
+  <div>
+    <ul>
+      <li *ngFor="let emp of employees">
+        <p>{{emp.firstName}} {{emp.lastName}} {{emp.id}} <button (click)="deleteEmployee(emp.id)">DELETE</button></p>
+      </li>
+    </ul>
+  </div>
+
+  <div style="margin-left:10%">
   <button (click)="createEmployee()">dodaj</button>
-
-
-
+  </div>
 
 </div>

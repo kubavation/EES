@@ -22,7 +22,7 @@ export class UserService {
         return this.db.doc('Employee/' + emp.id).update(emp);
     }
 
-    delete(empId: number) {
+    delete(empId: string) {
         this.db.doc('Employee/' + empId).delete();
     }
 

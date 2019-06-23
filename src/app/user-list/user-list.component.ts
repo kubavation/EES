@@ -17,9 +17,11 @@ export class UserListComponent implements OnInit {
     this.userService.findAll()
       .subscribe(data => {
         this.employees = data.map(d => {
+          console.log(d.payload.doc.id)
+          console.log(d.payload.doc.data())
           return {
+            ...d.payload.doc.data(),
             id: d.payload.doc.id,
-            ...d.payload.doc.data()
           } as Employee;
         })
       });
@@ -27,8 +29,9 @@ export class UserListComponent implements OnInit {
 
 
   createEmployee() {
-    let emp: Employee = {
-      id: 1,
+
+    const emp: Employee = {
+      id: '',
       firstName: 'kuba',
       lastName: 'kuba2',
       position: 'jakas',
@@ -38,6 +41,10 @@ export class UserListComponent implements OnInit {
 
     this.userService.create(emp);
     console.log('saved')
+  }
+
+  deleteEmployee(empId: string) {
+    this.userService.delete(empId);
   }
 
 }
