@@ -14,17 +14,7 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.findAll()
-      .subscribe(data => {
-        this.employees = data.map(d => {
-          console.log(d.payload.doc.id)
-          console.log(d.payload.doc.data())
-          return {
-            ...d.payload.doc.data(),
-            id: d.payload.doc.id,
-          } as Employee;
-        })
-      });
+    this.findAll();    
   }
 
 
@@ -38,13 +28,23 @@ export class UserListComponent implements OnInit {
       birth: new Date(),
       hired: new Date()
     };
-
     this.userService.create(emp);
-    console.log('saved')
   }
 
   deleteEmployee(empId: string) {
     this.userService.delete(empId);
+  }
+
+  findAll() {
+    this.userService.findAll()
+      .subscribe(data => {
+        this.employees = data.map(d => {
+            return {
+              ...d.payload.doc.data(),
+              id: d.payload.doc.id,
+            } as Employee;
+        })
+      });
   }
 
 }

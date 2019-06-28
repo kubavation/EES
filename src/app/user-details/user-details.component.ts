@@ -21,7 +21,6 @@ export class UserDetailsComponent implements OnInit {
 
   initEmployee() {
     this.route.params.subscribe(params => {
-      console.log(params['id']);
       this.userService.findById(params['id']).subscribe(res => {
           this.employee = {
             ...res
