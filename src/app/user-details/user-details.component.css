@@ -1,0 +1,8 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('http://www.centrumrekrutacyjne.pl/artykuly/artykul_294/450x307_12423620150312.png');
+    background-size: cover;
+  }

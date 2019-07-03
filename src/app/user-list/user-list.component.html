@@ -1,13 +1,38 @@
-<div style="margin-top:10%;margin-left:25%;width:25%">
+<div style="margin-left:10%;margin-top:10%;width: 80%">
 
-  <div>
+  <!-- <div>
     <ul>
       <li *ngFor="let emp of employees">
         <p>{{emp.firstName}} {{emp.lastName}} {{emp.id}} <button (click)="deleteEmployee(emp.id)">Delete</button>
         <a [routerLink]="['/employees/',emp.id]">Details</a> </p>
       </li>
     </ul>
-  </div>
+  </div> -->
+
+  <mat-grid-list cols="2" rowHeight="500px" [gutterSize]="'30px'">
+    <mat-grid-tile *ngFor="let emp of employees">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>dsada</mat-card-title>
+              <mat-card-subtitle>dsada</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="http://www.centrumrekrutacyjne.pl/artykuly/artykul_294/450x307_12423620150312.png" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
 
   <div style="margin-left:10%">
   <button (click)="createEmployee()">dodaj</button>
