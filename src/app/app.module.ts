@@ -14,32 +14,41 @@ import { Routes, RouterModule } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list'; 
+import { UserRatingformComponent } from './user-ratingform/user-ratingform.component';
 
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
-  {path: 'employees', component: UserListComponent}
+  {path: 'employees', component: UserListComponent},
+  {path: 'rating/:id', component: UserRatingformComponent}
 
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserProfileComponent,
-    UserListComponent,
-    UserDetailsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    RouterModule.forRoot(routes),
-    MatCardModule,
-    MatButtonModule,
-    MatGridListModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  exports: [UserProfileComponent, UserListComponent, UserDetailsComponent]
+   declarations: [
+      AppComponent,
+      UserProfileComponent,
+      UserListComponent,
+      UserDetailsComponent,
+      UserRatingformComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFirestoreModule,
+      RouterModule.forRoot(routes),
+      MatCardModule,
+      MatButtonModule,
+      MatGridListModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ],
+   exports: [
+      UserProfileComponent,
+      UserListComponent,
+      UserDetailsComponent
+   ]
 })
 export class AppModule { }
