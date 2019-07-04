@@ -15,10 +15,7 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.findAll(); 
-    setTimeout(
-      () => this.showContent = true, 3000
-    )   
+    this.findAll();
   }
 
 
@@ -41,14 +38,16 @@ export class UserListComponent implements OnInit {
 
   findAll() {
     this.userService.findAll()
-      .subscribe(data => {
+      .subscribe(
+        (data) => {
         this.employees = data.map(d => {
             return {
               ...d.payload.doc.data(),
               id: d.payload.doc.id,
             } as Employee;
-        })
-      });
+        });
+        this.showContent = true;
+    });
   }
 
 }

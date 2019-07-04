@@ -20,6 +20,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input'; 
+import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
@@ -51,7 +52,10 @@ const routes: Routes = [
       MatTabsModule,
       BrowserAnimationsModule,
       MatInputModule,
-      MatFormFieldModule
+      MatFormFieldModule,
+      FormsModule,
+      ReactiveFormsModule
+
    ],
    providers: [],
    bootstrap: [
