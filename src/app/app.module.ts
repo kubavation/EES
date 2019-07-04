@@ -21,6 +21,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input'; 
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
 
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
@@ -54,8 +56,9 @@ const routes: Routes = [
       MatInputModule,
       MatFormFieldModule,
       FormsModule,
-      ReactiveFormsModule
-
+      ReactiveFormsModule,
+      MatDatepickerModule,
+      MatNativeDateModule 
    ],
    providers: [],
    bootstrap: [

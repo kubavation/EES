@@ -1,21 +1,40 @@
 
 <div>
-  <mat-card> 
+  <mat-card style="margin-top:5%;padding-bottom:5%"> 
   <h1 style="text-align: center">Dodaj pracownika</h1>
 
-  <div>
+  <div style="display:inline-block">
 
-    <form class="example-form">
+    <form class="example-form" [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm.value)">
         
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Favorite food" value="Sushi">
+        <input matInput placeholder="Imię" formControlName="firstName">
+      </mat-form-field>
+       
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nazwisko" formControlName="lastName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Pozycja" formControlName="position">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="birthpicker" placeholder="Data urodzin" formControlName="birth">
+        <mat-datepicker-toggle matSuffix [for]="birthpicker"></mat-datepicker-toggle>
+        <mat-datepicker #birthpicker></mat-datepicker>
+      </mat-form-field>
+      <br/>
+      
+      <mat-form-field>
+        <input matInput [matDatepicker]="hiredpicker" placeholder="Data zatrudnienia" formControlName="hired">
+        <mat-datepicker-toggle matSuffix [for]="hiredpicker"></mat-datepicker-toggle>
+        <mat-datepicker #hiredpicker></mat-datepicker>
       </mat-form-field>
       
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Favorite food" value="Sushi">
-      </mat-form-field>
+      <br/><br/>
     
-      <button mat-button onclick="createEmployee()">Dodaj</button>
+      <button mat-button type="submit">Dodaj</button>
     </form>
 
   </div>
