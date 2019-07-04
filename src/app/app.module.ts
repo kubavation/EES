@@ -24,7 +24,8 @@ import {MatInputModule} from '@angular/material/input';
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
   {path: 'employees', component: UserListComponent},
-  {path: 'rating/:id', component: UserRatingformComponent}
+  {path: 'rating/:id', component: UserRatingformComponent},
+  {path: 'addEmployee', component: UserFormComponent}
 
 ];
 

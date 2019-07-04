@@ -10,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class UserListComponent implements OnInit {
 
   employees: Employee[];
+  showContent = false;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.findAll();    
+    this.findAll(); 
+    setTimeout(
+      () => this.showContent = true, 3000
+    )   
   }
 
 
