@@ -14,7 +14,12 @@ import { Routes, RouterModule } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatProgressSpinnerModule, MatFormFieldModule} from '@angular/material'; 
 import { UserRatingformComponent } from './user-ratingform/user-ratingform.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import {MatTabsModule} from '@angular/material/tabs'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input'; 
 
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
@@ -29,7 +34,8 @@ const routes: Routes = [
       UserProfileComponent,
       UserListComponent,
       UserDetailsComponent,
-      UserRatingformComponent
+      UserRatingformComponent,
+      UserFormComponent
    ],
    imports: [
       BrowserModule,
@@ -39,7 +45,12 @@ const routes: Routes = [
       RouterModule.forRoot(routes),
       MatCardModule,
       MatButtonModule,
-      MatGridListModule
+      MatGridListModule,
+      MatProgressSpinnerModule,
+      MatTabsModule,
+      BrowserAnimationsModule,
+      MatInputModule,
+      MatFormFieldModule
    ],
    providers: [],
    bootstrap: [
