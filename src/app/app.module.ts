@@ -23,12 +23,14 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
   {path: 'employees', component: UserListComponent},
   {path: 'rating/:id', component: UserRatingformComponent},
-  {path: 'addEmployee', component: UserFormComponent}
+  {path: 'addEmployee', component: UserFormComponent},
+  {path: '', component: HomeComponent }
 
 ];
 
@@ -39,7 +41,8 @@ const routes: Routes = [
       UserListComponent,
       UserDetailsComponent,
       UserRatingformComponent,
-      UserFormComponent
+      UserFormComponent,
+      HomeComponent
    ],
    imports: [
       BrowserModule,

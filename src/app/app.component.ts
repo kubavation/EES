@@ -13,17 +13,21 @@ export class AppComponent {
   constructor(private router: Router) {
     this.navLinks = [
         {
+          label: 'Strona główna',
+          link: './',
+          index: 0
+        }, {
             label: 'Lista pracowników',
             link: './employees',
-            index: 0
+            index: 1
         }, {
             label: 'Dodaj pracownika',
             link: './addEmployee',
-            index: 1
+            index: 2
         }, {
             label: 'Coś innego',
             link: './third',
-            index: 2
+            index: 3
         }, 
     ];
 }
