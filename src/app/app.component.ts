@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatTabGroup } from '@angular/material';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'angular-material-tab-router';  
+export class AppComponent implements OnInit{
+  title = 'angular-material-tab-router';
   navLinks: any[];
-  activeLinkIndex = -1; 
+  activeLinkIndex = -1;
+
   constructor(private router: Router) {
     this.navLinks = [
         {
@@ -33,7 +35,16 @@ export class AppComponent {
 }
 ngOnInit(): void {
   this.router.events.subscribe((res) => {
+      console.log("??")
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
+      console.log(this.activeLinkIndex);
   });
 }
+
+  test(event) {
+    console.log("SXD")
+    this.activeLinkIndex = 2;
+  }
+  
+
 }

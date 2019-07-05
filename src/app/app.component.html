@@ -3,11 +3,12 @@
    
 <h1>System oceny pracowników</h1>
 
-<nav mat-tab-nav-bar animationDuration="2000ms"> 
+<nav mat-tab-nav-bar> 
         <a mat-tab-link
         *ngFor="let link of navLinks"
         [routerLink]="link.link"
         routerLinkActive #rla="routerLinkActive"
+        [routerLinkActiveOptions]="{exact:true}"
         [active]="rla.isActive">
                 {{link.label}}
         </a>
