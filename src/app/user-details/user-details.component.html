@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="employee != null">
  
   <div style="display: inline-block;margin-top:10%">
   <mat-card class="example-card">
@@ -16,7 +16,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>Przejdź do oceny</button>
+        <button mat-button [routerLink]="['/rating', employee.id]">Przejdź do oceny</button>
     </mat-card-actions>
   </mat-card>
 </div>

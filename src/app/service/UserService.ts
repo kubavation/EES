@@ -30,4 +30,8 @@ export class UserService {
         return this.db.doc('Employee/' + empId).valueChanges();
     }
 
+    findById2(empId: string) {
+        return this.db.doc('Employee/' + empId).snapshotChanges();
+    }
+
 }

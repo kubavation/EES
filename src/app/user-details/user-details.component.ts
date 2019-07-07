@@ -19,14 +19,25 @@ export class UserDetailsComponent implements OnInit {
     this.initEmployee();
   }
 
+
   initEmployee() {
+    // this.route.params.subscribe(params => {
+    //   this.userService.findById(params['id']).subscribe(res => {
+    //       this.employee = {
+    //         ...res
+    //       } as Employee;
+    //   });
+    // });
+
     this.route.params.subscribe(params => {
-      this.userService.findById(params['id']).subscribe(res => {
+      this.userService.findById2(params['id']).subscribe( r => {
           this.employee = {
-            ...res
+            ...r.payload.data(),
+            id: r.payload.id
           } as Employee;
       });
     });
+
   }
 
 
