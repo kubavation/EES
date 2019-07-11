@@ -1,6 +1,6 @@
 import { Employee } from './../model/Employee';
 import { UserService } from './../service/UserService';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-list',
@@ -16,6 +16,13 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     this.findAll();
+  }
+
+  @Output() addTabEventEmitter = new EventEmitter();
+
+  test_emit() {
+      console.log('emiting')
+      this.addTabEventEmitter.emit({id: 'dsadsa', name: 'dsaaaaaa'})
   }
 
 

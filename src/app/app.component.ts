@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTabGroup } from '@angular/material';
+import { Employee } from './model/Employee';
 
 @Component({
   selector: 'app-root',
@@ -17,18 +18,22 @@ export class AppComponent implements OnInit{
         {
           label: 'Strona główna',
           link: './',
+          closable: false,
           index: 0
         }, {
             label: 'Lista pracowników',
             link: './employees',
+            closable: false,
             index: 1
         }, {
             label: 'Dodaj pracownika',
             link: './addEmployee',
+            closable: false,
             index: 2
         }, {
             label: 'Coś innego',
             link: './third',
+            closable: false,
             index: 3
         }, 
     ];
@@ -46,5 +51,14 @@ ngOnInit(): void {
     this.activeLinkIndex = 2;
   }
   
+  addTab(emp: Employee) {
+    console.log('xx')
+    this.navLinks.push({
+      label: 'Dodane!',
+      closable: true,
+      link: './employees/CSJ9EMYNUHaanPLRgHV8',
+      index: this.navLinks.length - 1
+    })
+  }
 
 }

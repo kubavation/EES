@@ -7,14 +7,8 @@
 <div *ngIf="showContent"
   style="margin-left:10%;margin-top:10%;width: 80%">
 
-  <!-- <div>
-    <ul>
-      <li *ngFor="let emp of employees">
-        <p>{{emp.firstName}} {{emp.lastName}} {{emp.id}} <button (click)="deleteEmployee(emp.id)">Delete</button>
-        <a [routerLink]="['/employees/',emp.id]">Details</a> </p>
-      </li>
-    </ul>
-  </div> -->
+
+
 
   <mat-grid-list cols="2" rowHeight="500px" [gutterSize]="'30px'">
     <mat-grid-tile *ngFor="let emp of employees">
