@@ -1,3 +1,4 @@
+import { TabsService } from './service/tabs.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTabGroup } from '@angular/material';
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit{
   navLinks: any[];
   activeLinkIndex = -1;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private tabsService: TabsService) {
     this.navLinks = [
         {
           label: 'Strona główna',
@@ -51,14 +52,5 @@ ngOnInit(): void {
     this.activeLinkIndex = 2;
   }
   
-  addTab(emp: Employee) {
-    console.log('xx')
-    this.navLinks.push({
-      label: 'Dodane!',
-      closable: true,
-      link: './employees/CSJ9EMYNUHaanPLRgHV8',
-      index: this.navLinks.length - 1
-    })
-  }
-
+ 
 }

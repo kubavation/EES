@@ -11,14 +11,14 @@ export class UserListComponent implements OnInit {
 
   employees: Employee[];
   showContent = false;
+  @Output() addTabEventEmitter: EventEmitter<any> = new EventEmitter<any>();
+
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.findAll();
   }
-
-  @Output() addTabEventEmitter = new EventEmitter();
 
   test_emit() {
       console.log('emiting')
