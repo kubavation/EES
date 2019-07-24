@@ -36,12 +36,17 @@ export class AppComponent implements OnInit{
             link: './third',
             closable: false,
             index: 3
-        }, 
+        },
+        {
+          label: 'Dodaj formularz oceny',
+          link: './addRatingForm',
+          closable: false,
+          index: 4
+        } 
     ];
 }
 ngOnInit(): void {
   this.router.events.subscribe((res) => {
-      console.log("??")
       this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
       console.log(this.activeLinkIndex);
   });

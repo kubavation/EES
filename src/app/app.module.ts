@@ -24,12 +24,14 @@ import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import { HomeComponent } from './home/home.component';
+import { RatingTemplateFormComponent } from './rating-template-form/rating-template-form.component';
 
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
   {path: 'employees', component: UserListComponent},
   {path: 'rating/:id', component: UserRatingformComponent},
   {path: 'addEmployee', component: UserFormComponent},
+  {path: 'addRatingForm', component: RatingTemplateFormComponent},
   {path: '', component: HomeComponent }
 
 ];
@@ -42,7 +44,8 @@ const routes: Routes = [
       UserDetailsComponent,
       UserRatingformComponent,
       UserFormComponent,
-      HomeComponent
+      HomeComponent,
+      RatingTemplateFormComponent
    ],
    imports: [
       BrowserModule,
@@ -70,7 +73,8 @@ const routes: Routes = [
    exports: [
       UserProfileComponent,
       UserListComponent,
-      UserDetailsComponent
+      UserDetailsComponent,
+      RatingTemplateFormComponent
    ]
 })
 export class AppModule { }

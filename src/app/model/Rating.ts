@@ -1,5 +1,4 @@
 export enum Rating {
-    
     NIEDOSTATECZNY = 1,
     DOPUSZCZAJACY = 2,
     DOSTATECZNY = 3,
