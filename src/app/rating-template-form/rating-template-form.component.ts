@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingTemplateFormComponent implements OnInit {
 
+  template: 
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
