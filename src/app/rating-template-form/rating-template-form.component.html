@@ -1,2 +1,28 @@
-
+<div>
   <h1>RATING TEMPLATE </h1>
+
+  <div>
+    
+    <div *ngFor="let field of template.fields">
+        {{field.label}} {{field.enableDesc}}
+    </div>
+
+    
+    <label for="newFieldInput">Nowe pole</label>
+    <div id="newFieldInput">
+      <input type="text" name="label" [(ngModel)]="newField.label">
+      <div>
+        Czy umożliwić dodawanie opisu?
+        <input type="checkbox" [(ngModel)]="newField.enableDesc"/>
+      </div>  
+      <button (click)="addField()">Dodaj</button>
+    </div>
+
+    <hr/>
+
+    <button (click)="saveTemplate()">Zapisz szablon</button>
+
+  </div>
+
+
+</div>
