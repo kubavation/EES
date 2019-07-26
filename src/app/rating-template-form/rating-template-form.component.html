@@ -3,6 +3,7 @@
 
   <div>
     
+    
     <div *ngFor="let field of template.fields">
         {{field.label}} {{field.enableDesc}}
     </div>
@@ -15,12 +16,13 @@
         Czy umożliwić dodawanie opisu?
         <input type="checkbox" [(ngModel)]="newField.enableDesc"/>
       </div>  
-      <button (click)="addField()">Dodaj</button>
+      <button mat-button (click)="addField()">Dodaj</button>
     </div>
 
-    <hr/>
 
-    <button (click)="saveTemplate()">Zapisz szablon</button>
+    <div style="margin-top: 10%">
+      <button mat-button (click)="saveTemplate()">Zapisz szablon</button>
+    </div>
 
   </div>
 
