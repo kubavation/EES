@@ -1,22 +1,34 @@
 <div>
-  <h1>RATING TEMPLATE </h1>
+
+  
+  <mat-card style="margin-top:5%;padding-bottom:5%"> 
+  <h1>Szablon oceny pracownika </h1>
 
   <div>
     
-    
-    <div *ngFor="let field of template.fields">
-        {{field.label}} {{field.enableDesc}}
+      <div style="margin-left:25%">
+        <mat-list role="list" *ngFor="let field of template.fields">
+            <mat-list-item role="listitem">{{field.label}}  {{field.enableDesc}}</mat-list-item> 
+        </mat-list>
     </div>
+<!--     
+    <label for="newFieldInput">Nowe pole</label> -->
 
-    
-    <label for="newFieldInput">Nowe pole</label>
     <div id="newFieldInput">
-      <input type="text" name="label" [(ngModel)]="newField.label">
+      <form class="example-form">
+      
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" placeholder="Nazwa pola" name="label" [(ngModel)]="newField.label">
+      </mat-form-field>
+
       <div>
-        Czy umożliwić dodawanie opisu?
-        <input type="checkbox" [(ngModel)]="newField.enableDesc"/>
+        <mat-checkbox [(ngModel)]="newField.enableDesc" name="desc">Czy umożliwić dodawanie opisu?</mat-checkbox>
       </div>  
+
       <button mat-button (click)="addField()">Dodaj</button>
+
+    </form>
+
     </div>
 
 
@@ -25,6 +37,7 @@
     </div>
 
   </div>
-
+ 
+  </mat-card>
 
 </div>

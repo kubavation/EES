@@ -25,6 +25,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { RatingTemplateFormComponent } from './rating-template-form/rating-template-form.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatListModule} from '@angular/material/list';
+
+
 
 const routes: Routes = [
   {path: 'employees/:id', component: UserDetailsComponent},
@@ -64,7 +68,9 @@ const routes: Routes = [
       FormsModule,
       ReactiveFormsModule,
       MatDatepickerModule,
-      MatNativeDateModule 
+      MatNativeDateModule,
+      MatCheckboxModule,
+      MatListModule 
    ],
    providers: [],
    bootstrap: [
