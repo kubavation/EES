@@ -27,6 +27,8 @@ import { HomeComponent } from './home/home.component';
 import { RatingTemplateFormComponent } from './rating-template-form/rating-template-form.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -70,7 +72,8 @@ const routes: Routes = [
       MatDatepickerModule,
       MatNativeDateModule,
       MatCheckboxModule,
-      MatListModule 
+      MatListModule,
+      MatTableModule 
    ],
    providers: [],
    bootstrap: [

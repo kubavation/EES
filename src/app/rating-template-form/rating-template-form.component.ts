@@ -13,6 +13,7 @@ export class RatingTemplateFormComponent implements OnInit {
 
   template: RatingTemplate;
   newField: RatingField = new RatingField();
+  displayedColumns: string[] = ['label', 'enableDesc'];
 
   constructor(private router: Router) { }
 

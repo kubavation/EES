@@ -6,13 +6,28 @@
 
   <div>
     
+    
+      <!-- <table mat-table [dataSource]="template.fields" class="mat-elevation-z8">
+          <ng-container matColumnDef="label">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.label}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="enableDesc">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.enableDesc}} </td>
+          </ng-container>
+            
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table> -->
+
       <div style="margin-left:25%">
         <mat-list role="list" *ngFor="let field of template.fields">
             <mat-list-item role="listitem">{{field.label}}  {{field.enableDesc}}</mat-list-item> 
         </mat-list>
     </div>
-<!--     
-    <label for="newFieldInput">Nowe pole</label> -->
 
     <div id="newFieldInput">
       <form class="example-form">
